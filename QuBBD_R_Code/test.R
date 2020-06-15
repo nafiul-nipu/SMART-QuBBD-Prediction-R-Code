@@ -1,0 +1,5 @@
+feature1 <- c(1)
+feature2 <- c(2)
+target <- c(3, 4)
+#lm(formula, data)
+relation <- glm(target ~ (feature1 + feature2))

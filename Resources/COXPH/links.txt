@@ -1,0 +1,41 @@
+http://sphweb.bumc.bu.edu/otlt/MPH-Modules/BS/BS704_Survival/index.html
+
+https://github.com/therneau/survival
+
+
+glm
+https://github.com/SurajGupta/r-source/blob/master/src/library/stats/R/glm.R
+https://github.com/rallysf/glm
+https://www.statsmodels.org/stable/index.html
+
+logistic regression
+https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc
+
+matrix in JS
+https://mathjs.org/examples/matrices.js.html
+https://mathjs.org/docs/reference/functions.html#matrix-functions
+https://www.robinwieruch.de/linear-algebra-matrix-javascript
+
+
+OLS 
+https://www.youtube.com/watch?time_continue=320&v=4_QZUWpYx1o&feature=emb_logo
+
+Calculating R square 
+https://www.youtube.com/watch?v=1deiaKFgrGg
+
+Calculating predicted Y in regression
+https://www.youtube.com/watch?v=qNU5P1L1I5E
+
+Residuals and fitted values
+https://www.youtube.com/watch?v=1gyx2PqHsjU
+
+
+StatQuest
+https://www.youtube.com/watch?v=qBigTkBLU6g&list=PLblh5JKOoLUK0FLuzwntyYI10UQFUhsY9
+
+logistic regression
+https://www.youtube.com/watch?v=yIYKR4sgzI8&list=PLblh5JKOoLUKxzEP5HA2d-Li7IJkHfXSe
+https://www.geeksforgeeks.org/understanding-logistic-regression/
+
+linear regression
+https://www.youtube.com/watch?v=PaFPbb66DxQ&list=PLblh5JKOoLUIzaEkCLIUxQFjPIlapw8nU

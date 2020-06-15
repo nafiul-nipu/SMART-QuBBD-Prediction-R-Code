@@ -1,0 +1,5 @@
+1. how glm works , family- binomial
+we want to look for fitted values and coefficients
+2. as.formula - how to make it to JS
+3. coxph
+4. basehaz
