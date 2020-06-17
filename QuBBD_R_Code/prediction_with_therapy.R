@@ -11,7 +11,7 @@
 
 
 if(!require("pacman")) install.packages("pacman")
-pacman::p_load(pacman, survival, tidyverse)
+pacman::p_load(pacman, survival, tidyverse, jsonlite)
 
 ### set file directory
 ## Modify this to correct file location 
@@ -256,4 +256,11 @@ rownames(final_weights) <- NULL
 
 print(final_preds)
 
+#jsonifying the final output
+#dat_r = toJSON(final_preds, dataframe = "rows")
+#dat_r
+#dat_c = toJSON(final_preds, dataframe = "columns")
+#dat_c
+#dat_v <- toJSON(final_preds, dataframe = "values")
+#dat_v
 #write.csv(final_weights, file="Risk_pred_model_coefficients.csv")
