@@ -5,13 +5,13 @@
 ## Adds therapy as a predictor
 
 ## load libraries
-#library(survival)
-#library(dplyr)
-#library(purrr)
+# library(survival)
+# library(tidyverse)
+# library(purrr)
 
 
 if(!require("pacman")) install.packages("pacman")
-pacman::p_load(pacman, survival, tidyverse, jsonlite)
+pacman::p_load(pacman, survival, tidyverse)
 
 ### set file directory
 ## Modify this to correct file location 
@@ -31,26 +31,19 @@ OPC <- read.csv("newdata.csv")
 #take the values to a dataframe
 OPC_final <- OPC
 
-'
-names(OPC)
-result <- OPC_final["2",]
-result["Dummy.ID"] <- as.integer(99999)
-
+# taking the value as a data frame
+result <- OPC[2,]
+result$Gender <- "Male"
 
 for(row in row.names(OPC_final)){
+  if(OPC_final[row, "Dummy.ID"] == result["Dummy.ID"]){
+    for(column in colnames(OPC_final)){
+      OPC_final[row,column] = result[column]
+    }
+    break
+  }
 }
 
-#if(existing_patient == FALSE){
-  new_row <- as.numeric(row) + 1
-  for(column in colnames(OPC_final)){
-    if(column %in% names(result)){
-      OPC_final[as.character(new_row) , column] <- result[column]
-    }
-  }
-#}
-'
-
-#sapply(OPC_final[1,], class)
 #takin first to forty colums
 OPC_final_clinic <- OPC_final[, c(1:40)]
 #making some new values using mutate
@@ -263,25 +256,7 @@ final_preds <- data.frame(ID=OPC_final_clinic$Dummy.ID,
                           progression_free_5yr_prob = preds_pfs)
 #write.csv(final_preds, file="Risk_preds.csv")
 
-weights <- list(data.frame(coef=fit_ft$coefficients[-1],var=names(fit_ft$coefficients[-1])),
-                data.frame(coef=fit_asp$coefficients[-1],var=names(fit_asp$coefficients[-1])),
-                data.frame(coef=fit_os$coefficients,var=names(fit_os$coefficients)),
-                data.frame(coef=fit_pfs$coefficients,var=names(fit_pfs$coefficients)))
+# final_matrix = data.matrix(final_preds)
+return(final_preds)
 
-final_weights <- reduce(weights,full_join,by="var")
-colnames(final_weights) <- c("feeding_tube_coef","variable","aspiration_coef",
-                             "overall_survival_5y4_coef","progression_free_5yr_coef")
-final_weights <- final_weights[order(final_weights$variable),]
-final_weights <- final_weights[,c(2,1,3:5)]
-rownames(final_weights) <- NULL
-
-print(final_preds)
-
-#jsonifying the final output
-#dat_r = toJSON(final_preds, dataframe = "rows")
-#dat_r
-#dat_c = toJSON(final_preds, dataframe = "columns")
-#dat_c
-#dat_v <- toJSON(final_preds, dataframe = "values")
-#dat_v
 #write.csv(final_weights, file="Risk_pred_model_coefficients.csv")
