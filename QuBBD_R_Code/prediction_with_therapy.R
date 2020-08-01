@@ -275,13 +275,7 @@ final_weights <- final_weights[order(final_weights$variable),]
 final_weights <- final_weights[,c(2,1,3:5)]
 rownames(final_weights) <- NULL
 
-print(final_preds)
+#write.csv(final_weights, file="Risk_pred_model_coefficients_04_19.csv")
 
-#jsonifying the final output
-#dat_r = toJSON(final_preds, dataframe = "rows")
-#dat_r
-#dat_c = toJSON(final_preds, dataframe = "columns")
-#dat_c
-#dat_v <- toJSON(final_preds, dataframe = "values")
-#dat_v
-#write.csv(final_weights, file="Risk_pred_model_coefficients.csv")
+#print(final_preds)
+

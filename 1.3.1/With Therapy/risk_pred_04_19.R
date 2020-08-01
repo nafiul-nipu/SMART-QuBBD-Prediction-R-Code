@@ -5,17 +5,22 @@
 ## Adds therapy as a predictor
 
 ## load libraries
-library(survival)
-library(dplyr)
-library(purrr)
+#library(survival)
+#library(dplyr)
+#library(purrr)
+
+if(!require("pacman")) install.packages("pacman")
+pacman::p_load(pacman, survival, tidyverse)
 
 ### set file directory
 ## Modify this to correct file location 
-file.dir <- "/users/shannonmck/Box/SMART/SMART database/Training set_version1.3/"
+#file.dir <- "/users/shannonmck/Box/SMART/SMART database/Training set_version1.3/"
 
 ### load data
-OPC <- read.csv(paste0(file.dir, 
-                       "Anonymized_644.Updated_cleaned_v1.3.1.csv"))
+#OPC <- read.csv(paste0(file.dir, 
+ #                      "Anonymized_644.Updated_cleaned_v1.3.1.csv"))
+
+OPC <- read.csv("newdata.csv")
 #length(unique(OPC$Dummy.ID))
 
 ###############################
