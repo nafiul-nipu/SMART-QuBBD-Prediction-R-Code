@@ -1,0 +1,8 @@
+changing existing patient/adding new patient with therapeutic
+Error in (as.matrix(design.OPC)) %*% (matrix(fit_os$coefficients)) :
+  requires numeric/complex matrix/vector arguments
+
+
+adding new patient with therapeutic NA
+Error in model.frame.default(Terms, newdata, na.action = na.action, xlev = object$xlevels) :
+  factor Therapeutic.combination has new levels NA
